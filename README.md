@@ -52,7 +52,7 @@ O projeto é leve e utiliza apenas os recursos nativos da linguagem Python, gara
 
 ### Tecnologias Utilizadas
 
-  * **Linguagem:** Python 3.x
+  * **Linguagem:** Python 3.10
   * **Interface:** Console / Terminal
   * **Recursos:** Estruturas de dados nativas (`list`, `dict`) e módulo `os` para limpeza de tela.
 
@@ -79,3 +79,4 @@ Para rodar o projeto localmente, siga os passos abaixo:
 Este projeto foi desenvolvido por: **Janerson Alves**
 
   * *Data de Criação:* **03/12/2025**
+
