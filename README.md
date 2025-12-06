@@ -1,94 +1,81 @@
-# Gerenciador de Alunos (Console)
+# 🎓 Gerenciador de Alunos - Sistema Console
 
-Sistema de cadastro e gerenciamento de alunos em modo console, desenvolvido em Python, focado em prática de conceitos básicos de programação e CRUD em memória.
+Este é um projeto de desenvolvimento em Python, implementado em modo console, com foco na prática e consolidação dos princípios básicos de programação e operações de **CRUD** (*Create, Read, Update, Delete*) em memória. É um excelente exercício para quem está no nível **Iniciante/Intermediário**.
 
-## 🎯 Objetivo
+---
 
-Este projeto foi criado com o objetivo de praticar:
+## 🎯 Foco e Aprendizado
 
-- Listas e dicionários
-- Estruturas de repetição (loops)
-- Condicionais
-- Funções
-- Manipulação simples de dados em memória
+O projeto foi meticulosamente desenhado para fortalecer a compreensão e aplicação prática dos seguintes pilares da programação em Python:
 
-Nível sugerido: **Iniciante / Intermediário** (similar a um gerenciador de agenda em console). [web:4]
+* **Estruturas Fundamentais:** Domínio de **Listas** e **Dicionários** como ferramentas principais para manipulação de coleções e objetos complexos.
+* **Controle de Fluxo:** Implementação eficiente de **laços de repetição (loops)** para navegação e **condicionais** para validação de regras de negócio.
+* **Modularidade:** Uso de **Funções** dedicadas para isolar e gerenciar cada operação (CRUD), promovendo código limpo e reutilizável.
+* **Gestão de Dados em Memória:** Simulação de um sistema de cadastro onde os dados residem na memória enquanto o programa é executado.
 
-## 🧠 Funcionalidades
+---
 
-O sistema é um CRUD básico de alunos, com as seguintes operações:
+## 🧠 Conjunto de Funcionalidades
 
-- `cadastrar_aluno()`  
-  Adiciona um novo aluno à lista, gerando um ID automaticamente e calculando o status de aprovação com base na média.
+O sistema opera como um gerenciador de dados de alunos, executando todas as operações CRUD de maneira intuitiva via terminal:
 
-- `listar_alunos()`  
-  Lista todos os alunos cadastrados em uma saída formatada no console.
+| Operação | Descrição |
+| :--- | :--- |
+| **Cadastrar** | Adiciona um aluno, gerando um **ID** sequencial e calculando o **Status de Aprovação** automaticamente com base na média inserida. |
+| **Listar** | Exibe a lista completa de alunos em um formato de tabela organizado no console. |
+| **Buscar** | Permite localizar um aluno rapidamente usando seu **ID** único ou o **Nome** (com busca *case-insensitive*). |
+| **Atualizar** | Modifica dados como idade, curso ou nota de um aluno. O Status de Aprovação é **recalculado dinamicamente** sempre que a nota é alterada. |
+| **Remover** | Exclui um cadastro da lista após a confirmação do usuário. |
+| **Sair** | Encerra a aplicação pelo menu principal. |
 
-- `buscar_aluno_por_id_nome()`  
-  Permite buscar um aluno pelo **ID** ou pelo **nome**.s
-
-- `atualizar_aluno()`  
-  Atualiza campos específicos (idade, curso ou nota) de um aluno, identificado por ID ou nome, recalculando o status de aprovação quando a nota é alterada.
-
-- `remover_aluno()`  
-  Remove um aluno da lista a partir do ID, com confirmação antes da exclusão.
-
-- Opção `Sair`  
-  Encerra o sistema pelo menu principal.
+---
 
 ## 🗂 Estrutura de Dados
 
-Os alunos são armazenados em memória em uma lista de dicionários:
+Os dados dos alunos são armazenados em uma estrutura Python nativa: uma **lista de dicionários** (`lista_alunos = []`).
 
-lista_alunos = []
+Cada aluno é representado por um dicionário com as seguintes chaves:
 
-Exemplo de estrutura de um aluno  
+json  
 {  
-"id": str, # ID gerado automaticamente (ex: "1", "2", "3"...)  
-"nome": str,  
-"idade": int,  
-"curso": str,  
-"media": float,  
-"status": str # "Aprovado" ou "Reprovado" calculado pela média  
+"id": "1",          // String sequencial gerada pelo sistema  
+"nome": "Nome do Aluno",  
+"idade": 25,        // Validação: 4 a 99 anos  
+"curso": "Engenharia",  
+"media": 8.5,       // Validação: 0.0 a 10.0  
+"status": "Aprovado"// Calculado: "Aprovado" (media >= 6) ou "Reprovado"  
 }  
 
+## ⚙️ Tecnologias e Execução
 
-A validação básica de dados inclui verificação de faixa de média (0 a 10) e de idade (4 a 99 anos). [web:6]
+O projeto é leve e utiliza apenas os recursos nativos da linguagem Python, garantindo máxima portabilidade.
 
-## 📌 Como Funciona o Menu
+### Tecnologias Utilizadas
 
-Ao executar o script Python, o usuário vê um menu interativo no console:
+  * **Linguagem:** Python 3.x
+  * **Interface:** Console / Terminal
+  * **Recursos:** Estruturas de dados nativas (`list`, `dict`) e módulo `os` para limpeza de tela.
 
-1. Cadastrar Alunos  
-2. Listar Alunos  
-3. Buscar Aluno (por ID ou Nome)  
-4. Atualizar Aluno (idade, curso ou nota)  
-5. Remover Aluno (por ID)  
-6. Sair  
+### Como Iniciar o Sistema
 
-Todas as interações são feitas via `input()` e as mensagens são exibidas no terminal. O projeto utiliza a função `os.system("cls")` para limpar a tela em ambiente Windows. [web:1]
+Para rodar o projeto localmente, siga os passos abaixo:
 
-## ▶️ Como Executar
+1.  Certifique-se de ter o **Python 3** instalado na sua máquina.
 
-1. Certifique-se de ter o **Python 3** instalado na sua máquina. [web:4]  
-2. Clone este repositório:
+2.  Clone o repositório ou baixe o arquivo `gerenciador_alunos.py`.
 
+3.  Acesse a pasta do projeto no terminal.
 
-3. Acesse a pasta do projeto:
+4.  Execute o script principal:
 
+    ```bash
+    python gerenciador_alunos.py
+    ```
 
-4. Execute o script principal:
+-----
 
+## 👤 Desenvolvedor
 
-> Observação: em sistemas Linux ou macOS, adapte o comando de limpar tela (`cls` → `clear`) se desejar compatibilidade multiplataforma. [web:15]
+Este projeto foi desenvolvido por: **Janerson Alves**
 
-## 🛠 Tecnologias Utilizadas
-
-- Python 3.x
-- Modo console / terminal
-- Estruturas de dados básicas (lista e dicionário) [web:4]
-
-## 👤 Autor
-
-Projeto desenvolvido por **Janerson Alves**  
-📅 Data de criação: **03/12/2025**
+  * *Data de Criação:* **03/12/2025**
