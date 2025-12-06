@@ -42,15 +42,15 @@ Os alunos são armazenados em memória em uma lista de dicionários:
 
 lista_alunos = []
 
-Exemplo de estrutura de um aluno
-{
-"id": str, # ID gerado automaticamente (ex: "1", "2", "3"...)
-"nome": str,
-"idade": int,
-"curso": str,
-"media": float,
-"status": str # "Aprovado" ou "Reprovado" calculado pela média
-}
+Exemplo de estrutura de um aluno  
+{  
+"id": str, # ID gerado automaticamente (ex: "1", "2", "3"...)  
+"nome": str,  
+"idade": int,  
+"curso": str,  
+"media": float,  
+"status": str # "Aprovado" ou "Reprovado" calculado pela média  
+}  
 
 
 A validação básica de dados inclui verificação de faixa de média (0 a 10) e de idade (4 a 99 anos). [web:6]
@@ -92,5 +92,3 @@ Todas as interações são feitas via `input()` e as mensagens são exibidas no 
 
 Projeto desenvolvido por **Janerson Alves**  
 📅 Data de criação: **03/12/2025**
-
-
